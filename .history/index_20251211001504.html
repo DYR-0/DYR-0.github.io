@@ -245,14 +245,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><b>Causal Discovery</b></li>
         <li><b>Knowledge Graph & Grounded LLM</b></li>
         <li><b>Multi-agent Systems</b></li>
-        <li><b>Disaster Management</b></li>
-        <li><b>Urban Policy</b></li>
-        <li><b>Human Mobility</b></li>
-        <li><b>Urban Analytics</b></li>
-        <li><b>Built Environment</b></li>
-        <li><b>Human Behavior</b></li>
-        <li><b>Agent-based Social Simulation</b></li>
-        <li><b>Computational Social Science</b></li>
       </ul>
     </div>
 
@@ -265,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul>
           <li>Ph.D in Environmental Planning and Design, Jan. 2024 - Dec. 2027</li>
           <li>M.Eng in Computer Science (Simultaneous Degree), Sep. 2024 - Dec. 2026</li>
-          <li>Advisor: <a href="https://mlsoc.vt.edu/about/faculty-and-staff/lu-zhang.html" target="_blank">Dr. Lu Zhang</a></li>
+          <li>Advisor: <a href="https:/a/mlsoc.vt.edu/about/faculty-and-staff/lu-zhang.html" target="_blank">Dr. Lu Zhang</a></li>
           <li>Committee Members:
             <a href="https://spia.vt.edu/people/Faculty/zhangy.html" target="_blank">Dr. Yang Zhang</a>,
             <a href="https://www.junghwankim.org/" target="_blank">Dr. Junghwan Kim</a>,
@@ -287,89 +279,149 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <style>
-  .timeline-body {
-    margin: 20px 0;
+  .experience-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px 0;
+  }
+
+  .experience-timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #ddd;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
   }
 
   .timeline-item {
-    padding-bottom: 15px;
-    margin-bottom: 0;
-    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
   }
 
-  .timeline-item:last-child {
-    border-bottom: none;
+  .timeline-item::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #4a90e2;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    left: 50%;
+    top: 20px;
+    margin-left: -8px;
+    z-index: 1;
+    box-shadow: 0 0 0 3px #e8e8e8;
+  }
+
+  .timeline-content-wrapper {
+    width: 45%;
+    position: relative;
+  }
+
+  .timeline-left .timeline-content-wrapper {
+    float: left;
+    text-align: right;
+    padding-right: 40px;
+  }
+
+  .timeline-right .timeline-content-wrapper {
+    float: right;
+    text-align: left;
+    padding-left: 40px;
+  }
+
+  .timeline-icon-wrapper {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .timeline-icon-wrapper img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
   }
 
   .timeline-date {
-    display: flex;
-    align-items: center;
-    gap: 10px;
     color: #666;
-    font-size: 0.85em;
+    font-size: 0.9em;
     font-weight: 600;
-    margin-bottom: 6px;
-    margin-top: 15px;
+    margin-bottom: 8px;
   }
 
-  .social-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    border-radius: 4px;
+  .timeline-position {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #8B0000;
+    margin-bottom: 5px;
+    line-height: 1.4;
   }
 
-  .timeline-title {
-    font-size: 0.85em;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 6px;
+  .timeline-company {
+    color: #4a90e2;
+    margin-bottom: 10px;
     line-height: 1.3;
   }
 
-  .timeline-title a {
+  .timeline-company a {
     color: #4a90e2;
     text-decoration: none;
   }
 
-  .timeline-title a:hover {
+  .timeline-company a:hover {
     text-decoration: underline;
   }
 
-  .timeline-desc {
-    margin-top: 6px;
+  .timeline-details {
+    margin-top: 10px;
+  }
+
+  .timeline-details summary {
+    cursor: pointer;
+    font-weight: 500;
     color: #555;
-    font-size: 0.8em;
+  }
+
+  .timeline-details ul {
+    margin-top: 8px;
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .timeline-details li {
+    margin-bottom: 5px;
+    font-size: 0.95em;
     line-height: 1.4;
   }
 
-  .timeline-host {
-    margin-top: 5px;
-  }
-
-  .timeline-host ul {
-    margin: 6px 0;
-    padding-left: 20px;
-  }
-
-  .timeline-host li {
-    margin-bottom: 4px;
-    line-height: 1.3;
-    font-size: 0.95em;
-  }
-
   @media screen and (max-width: 768px) {
-    .social-icon {
-      width: 35px;
-      height: 35px;
+    .experience-timeline::after {
+      left: 30px;
     }
 
-    .timeline-date {
-      font-size: 0.75em;
+    .timeline-item::before {
+      left: 30px;
+      margin-left: 0;
     }
 
-    .timeline-title {
-      font-size: 0.8em;
+    .timeline-left .timeline-content-wrapper,
+    .timeline-right .timeline-content-wrapper {
+      width: calc(100% - 80px);
+      float: none;
+      text-align: left;
+      padding-left: 60px;
+      padding-right: 0;
     }
   }
 </style>
@@ -381,85 +433,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Experiences
     </h1>
 
-    <div class="timeline-body">
+    <div class="timeline-container">
       <!-- VT -->
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/vt.jpg"/>
-          Jan, 2024 - Now
-        </div>
-        <div class="timeline-title">
-          GRA/GTA @ <a href="https://mlsoc.vt.edu/" target="_blank">Myers-Lawson School of Construction</a>
+      <div class="timeline-entry">
+        <div class="timeline-content">
+          <img class="timeline-icon" src="images/vt.jpg" alt="Virginia Tech"/>
+          <div class="timeline-date-text">Jan, 2024 - Now</div>
+          <div class="timeline-title">
+            GRA/GTA @ <a href="https://mlsoc.vt.edu/" target="_blank">Myers-Lawson School of Construction</a>
+          </div>
         </div>
       </div>
 
       <!-- Yunnan Design -->
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/yunnan-design.jpg"/>
-          Apr, 2017 - Jan, 2023
-        </div>
-        <div class="timeline-title">
-          Structure Design Engineer / Design Supervisor / Design Representative @ <a href="https://www.ydi.cn/list/cnEN/23/85/auto/12/0.html" target="_blank">Architecture Design & Research Inst. III, Yunnan Design Institute Group Co., Ltd.</a>
-        </div>
-        <div class="timeline-desc">
-          <div class="timeline-host">
+      <div class="timeline-entry">
+        <div class="timeline-content">
+          <img class="timeline-icon" src="images/yunnan-design.jpg" alt="Yunnan Design Institute"/>
+          <div class="timeline-date-text">Apr, 2017 - Jan, 2023</div>
+          <div class="timeline-title">
             <details>
-              <summary style="cursor: pointer;">View Details</summary>
-              <ul>
-                <li>Conducted or led structural calculations, seismic analysis, and design for ~30 building projects over 220,000 m².</li>
-                <li>Led the design of The Vegetation Restoration PPP Project of Fuxian Lake (total investment: RMB 1.618 billion).</li>
-                <li>Analyzed and solved the on-site design problems of 5 building projects with a total construction area of over 680,000 m².</li>
-              </ul>
+              <summary style="cursor: pointer; font-weight: normal;">
+                Structure Design Engineer / Design Supervisor / Design Representative @ <a href="https://www.ydi.cn/list/cnEN/23/85/auto/12/0.html" target="_blank">Architecture Design & Research Inst. III, Yunnan Design Institute Group Co., Ltd.</a>
+              </summary>
+              <div style="margin-top: 10px; padding-left: 20px;">
+                <ul>
+                  <li>Conducted or led structural calculations, seismic analysis, and design for ~30 building projects over 220,000 m².</li>
+                  <li>Led the design of The Vegetation Restoration PPP Project of Fuxian Lake (total investment: RMB 1.618 billion).</li>
+                  <li>Analyzed and solved the on-site design problems of 5 building projects with a total construction area of over 680,000 m².</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
       </div>
 
       <!-- Hangxiao Steel -->
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/hangxiao-steel.jpg"/>
-          Jul, 2016 - Mar, 2017
-        </div>
-        <div class="timeline-title">
-          Steel Structure Engineer & BIM Engineer @ <a href="https://www.hxss.com.cn/en/" target="_blank">Hangxiao Steel Structure Co., Ltd.</a>
-        </div>
-        <div class="timeline-desc">
-          <div class="timeline-host">
+      <div class="timeline-entry">
+        <div class="timeline-content">
+          <img class="timeline-icon" src="images/hangxiao-steel.jpg" alt="Hangxiao Steel Structure"/>
+          <div class="timeline-date-text">Jul, 2016 - Mar, 2017</div>
+          <div class="timeline-title">
             <details>
-              <summary style="cursor: pointer;">View Details</summary>
-              <ul>
-                <li>Completed the joint design and Tekla modelling for 4 building projects, with a total investment of more than RMB 1 billion.</li>
-                <li>Completed the BIM modelling for the commercial project of Huaxia Yufu in Kunming (construction area: 24,363.59 m²).</li>
-              </ul>
+              <summary style="cursor: pointer; font-weight: normal;">
+                Steel Structure Engineer & BIM Engineer @ <a href="https://www.hxss.com.cn/en/" target="_blank">Hangxiao Steel Structure Co., Ltd.</a>
+              </summary>
+              <div style="margin-top: 10px; padding-left: 20px;">
+                <ul>
+                  <li>Completed the joint design and Tekla modelling for 4 building projects, with a total investment of more than RMB 1 billion.</li>
+                  <li>Completed the BIM modelling for the commercial project of Huaxia Yufu in Kunming (construction area: 24,363.59 m²).</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
       </div>
 
       <!-- CREEC -->
-      <div class="timeline-item">
-        <div class="timeline-date">
-          <img class="social-icon" src="images/creec-kunming.jpg"/>
-          Jan, 2015 - Feb, 2015
-        </div>
-        <div class="timeline-title">
-          Structure Design Intern @ <a href="https://www.crecg.com/zgztywz/about_us/organization/subsidiaries_of_crec/index.html" target="_blank">Kunming Survey, Design and Research Institute Co., Ltd. Of CREEC</a>
-        </div>
-        <div class="timeline-desc">
-          <div class="timeline-host">
+      <div class="timeline-entry">
+        <div class="timeline-content">
+          <img class="timeline-icon" src="images/creec-kunming.jpg" alt="CREEC Kunming"/>
+          <div class="timeline-date-text">Jan, 2015 - Feb, 2015</div>
+          <div class="timeline-title">
             <details>
-              <summary style="cursor: pointer;">View Details</summary>
-              <ul>
-                <li>Learned the structural design and analysis of subway stations and sections from Kunming Metro Line 3 Project.</li>
-              </ul>
+              <summary style="cursor: pointer; font-weight: normal;">
+                Structure Design Intern @ <a href="https://www.crecg.com/zgztywz/about_us/organization/subsidiaries_of_crec/index.html" target="_blank">Kunming Survey, Design and Research Institute Co., Ltd. Of CREEC</a>
+              </summary>
+              <div style="margin-top: 10px; padding-left: 20px;">
+                <ul>
+                  <li>Learned the structural design and analysis of subway stations and sections from Kunming Metro Line 3 Project.</li>
+                </ul>
+              </div>
             </details>
           </div>
         </div>
       </div>
-
-    <br>
     </div>
 
     <br>
@@ -585,7 +632,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </font>
         </div>
         <div class="publish">
-          <span class="place">CRC2026 (Accepted)</span>
+          <span class="place">Conference Paper (Accepted)</span>
           <span class="place"></span>
         </div>
         <div class="tags">
@@ -607,7 +654,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </font>
         </div>
         <div class="publish">
-          <span class="place">i3ce 2026 (Abstract Submitted)</span>
+          <span class="place">Conference Paper (Abstract Submitted)</span>
           <span class="place"></span>
         </div>
         <div class="tags">
@@ -629,7 +676,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </font>
         </div>
         <div class="publish">
-          <span class="place">i3ce 2026 (Abstract Submitted)</span>
+          <span class="place">Conference Paper (Abstract Submitted)</span>
           <span class="place"></span>
         </div>
         <div class="tags">

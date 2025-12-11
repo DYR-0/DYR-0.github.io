@@ -289,16 +289,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <style>
   .timeline-body {
     margin: 20px 0;
+    position: relative;
+    padding-left: 60px;
+  }
+
+  .timeline-body::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #333;
   }
 
   .timeline-item {
-    padding-bottom: 15px;
-    margin-bottom: 0;
-    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
   }
 
   .timeline-item:last-child {
-    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 
   .timeline-date {
@@ -309,7 +322,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     font-size: 0.85em;
     font-weight: 600;
     margin-bottom: 6px;
-    margin-top: 15px;
   }
 
   .social-icon {
@@ -317,6 +329,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     height: 40px;
     object-fit: contain;
     border-radius: 4px;
+    position: absolute;
+    left: -60px;
+    top: 0;
+    background: white;
+    padding: 2px;
+    border: 2px solid #333;
   }
 
   .timeline-title {
@@ -359,9 +377,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   @media screen and (max-width: 768px) {
+    .timeline-body {
+      padding-left: 50px;
+    }
+
+    .timeline-body::before {
+      left: 15px;
+    }
+
     .social-icon {
       width: 35px;
       height: 35px;
+      left: -50px;
     }
 
     .timeline-date {

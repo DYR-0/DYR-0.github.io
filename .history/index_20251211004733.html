@@ -289,12 +289,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <style>
   .timeline-body {
     margin: 20px 0;
+    position: relative;
+    padding-left: 10px;
+  }
+
+  .timeline-body::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e0e0e0;
   }
 
   .timeline-item {
+    margin-bottom: 25px;
     padding-bottom: 15px;
-    margin-bottom: 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e8e8e8;
+    position: relative;
   }
 
   .timeline-item:last-child {
@@ -309,7 +322,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     font-size: 0.85em;
     font-weight: 600;
     margin-bottom: 6px;
-    margin-top: 15px;
   }
 
   .social-icon {
@@ -317,6 +329,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     height: 40px;
     object-fit: contain;
     border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    background: white;
   }
 
   .timeline-title {
@@ -359,6 +374,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   @media screen and (max-width: 768px) {
+    .timeline-body::before {
+      left: 15px;
+    }
+
     .social-icon {
       width: 35px;
       height: 35px;
