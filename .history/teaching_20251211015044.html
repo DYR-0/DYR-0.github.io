@@ -252,18 +252,35 @@
       background: #f8f9fa;
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .teaching-nav {
+        position: fixed;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 0.5rem;
+        border-right: none;
+        border-top: 3px solid #667eea;
+      }
+      
       .teaching-nav-content {
-        gap: 0.5rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem;
       }
       
       .teaching-nav a {
-        padding: 0.4rem 0.6rem;
+        padding: 0.5rem 0.75rem;
         font-size: 0.85rem;
       }
       
-      .teaching-header {
-        margin-top: 80px;
+      .page-content {
+        margin-left: 0;
+        padding-bottom: 80px;
       }
       
       .teaching-header h1 {
@@ -286,6 +303,12 @@
 </head>
 
 <body>
+  <div class="teaching-header">
+    <h1>Teaching Portfolio</h1>
+    <p>Yirong Ding, PhD Student</p>
+    <p>Disaster Resilience, Urban Informatics & Data-Driven Civil Infrastructure</p>
+  </div>
+
   <nav class="teaching-nav">
     <div class="teaching-nav-content">
       <a href="#philosophy">Teaching Philosophy</a>
@@ -296,12 +319,6 @@
       <a href="index.html">← Back to Home</a>
     </div>
   </nav>
-
-  <div class="teaching-header">
-    <h1>Teaching Portfolio</h1>
-    <p>Yirong Ding, PhD Student</p>
-    <p>Disaster Resilience, Urban Informatics & Data-Driven Civil Infrastructure</p>
-  </div>
 
   <div class="page-content">
     <div class="wrapper">

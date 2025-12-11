@@ -40,32 +40,36 @@
     
     .teaching-nav {
       background: white;
-      padding: 1rem 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 1.5rem 1rem;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
       position: fixed;
-      top: 0;
       left: 0;
-      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 200px;
       z-index: 100;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 3px solid #667eea;
     }
     
     .teaching-nav-content {
-      max-width: 1200px;
-      margin: 0 auto;
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0;
     }
     
     .teaching-nav a {
       color: #667eea;
       text-decoration: none;
       font-weight: 500;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1rem;
       border-radius: 4px;
       transition: background 0.3s, color 0.3s;
+      text-align: left;
+      font-size: 0.95rem;
     }
     
     .teaching-nav a:hover {
@@ -73,8 +77,8 @@
       color: white;
     }
     
-    .teaching-header {
-      margin-top: 60px;
+    .page-content {
+      margin-left: 220px;
     }
     
     .teaching-section {
@@ -252,18 +256,35 @@
       background: #f8f9fa;
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .teaching-nav {
+        position: fixed;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 0.5rem;
+        border-right: none;
+        border-top: 3px solid #667eea;
+      }
+      
       .teaching-nav-content {
-        gap: 0.5rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem;
       }
       
       .teaching-nav a {
-        padding: 0.4rem 0.6rem;
+        padding: 0.5rem 0.75rem;
         font-size: 0.85rem;
       }
       
-      .teaching-header {
-        margin-top: 80px;
+      .page-content {
+        margin-left: 0;
+        padding-bottom: 80px;
       }
       
       .teaching-header h1 {
@@ -286,6 +307,12 @@
 </head>
 
 <body>
+  <div class="teaching-header">
+    <h1>Teaching Portfolio</h1>
+    <p>Yirong Ding, PhD Student</p>
+    <p>Disaster Resilience, Urban Informatics & Data-Driven Civil Infrastructure</p>
+  </div>
+
   <nav class="teaching-nav">
     <div class="teaching-nav-content">
       <a href="#philosophy">Teaching Philosophy</a>
@@ -296,12 +323,6 @@
       <a href="index.html">← Back to Home</a>
     </div>
   </nav>
-
-  <div class="teaching-header">
-    <h1>Teaching Portfolio</h1>
-    <p>Yirong Ding, PhD Student</p>
-    <p>Disaster Resilience, Urban Informatics & Data-Driven Civil Infrastructure</p>
-  </div>
 
   <div class="page-content">
     <div class="wrapper">

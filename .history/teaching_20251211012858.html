@@ -42,18 +42,17 @@
       background: white;
       padding: 1rem 0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
       z-index: 100;
+      margin-bottom: 2rem;
     }
     
     .teaching-nav-content {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       flex-wrap: wrap;
       justify-content: center;
       padding: 0 1rem;
@@ -71,10 +70,6 @@
     .teaching-nav a:hover {
       background: #667eea;
       color: white;
-    }
-    
-    .teaching-header {
-      margin-top: 60px;
     }
     
     .teaching-section {
@@ -170,30 +165,42 @@
     
     .timeline {
       position: relative;
-      padding-left: 1.5rem;
+      padding-left: 2rem;
       margin: 2rem 0;
-      border-left: 3px solid #667eea;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #667eea;
     }
     
     .timeline-item {
       position: relative;
-      margin-bottom: 1.5rem;
-      padding-left: 0;
-      text-align: left;
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 0.3rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #667eea;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px #667eea;
     }
     
     .timeline-item h4 {
-      text-align: left;
       color: #667eea;
       margin-top: 0;
-    }
-    
-    .timeline-item p {
-      text-align: left;
-    }
-    
-    .timeline-item ul {
-      text-align: left;
     }
     
     .grid-2 {
@@ -253,25 +260,16 @@
     }
     
     @media (max-width: 768px) {
-      .teaching-nav-content {
-        gap: 0.5rem;
-      }
-      
-      .teaching-nav a {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.85rem;
-      }
-      
-      .teaching-header {
-        margin-top: 80px;
-      }
-      
       .teaching-header h1 {
         font-size: 1.8rem;
       }
       
       .teaching-section {
         padding: 1.5rem;
+      }
+      
+      .teaching-nav-content {
+        gap: 0.5rem;
       }
       
       .teaching-table {
@@ -286,6 +284,12 @@
 </head>
 
 <body>
+  <div class="teaching-header">
+    <h1>Teaching Portfolio</h1>
+    <p>Yirong Ding, PhD Student</p>
+    <p>Disaster Resilience, Urban Informatics & Data-Driven Civil Infrastructure</p>
+  </div>
+
   <nav class="teaching-nav">
     <div class="teaching-nav-content">
       <a href="#philosophy">Teaching Philosophy</a>
@@ -296,12 +300,6 @@
       <a href="index.html">← Back to Home</a>
     </div>
   </nav>
-
-  <div class="teaching-header">
-    <h1>Teaching Portfolio</h1>
-    <p>Yirong Ding, PhD Student</p>
-    <p>Disaster Resilience, Urban Informatics & Data-Driven Civil Infrastructure</p>
-  </div>
 
   <div class="page-content">
     <div class="wrapper">
@@ -463,58 +461,48 @@
 
       <!-- Section 2B: Second Innovative Assignment -->
       <section id="assignment2" class="teaching-section">
-        <h2><i class="fa fa-line-chart" aria-hidden="true"></i> Second Innovative Assignment</h2>
-        <h3>Machine Learning for Infrastructure Disruption Prediction</h3>
+        <h2><i class="fa fa-connectdevelop" aria-hidden="true"></i> Second Innovative Assignment</h2>
+        <h3>Building a Knowledge Graph for Infrastructure Interdependencies</h3>
 
         <h4>Overview</h4>
-        <p>This assignment challenges students to build and evaluate machine learning models that predict infrastructure disruptions during disasters. Using historical disaster data with features such as hazard intensity, infrastructure characteristics, and socioeconomic factors, students will develop regression or classification models to forecast disruption likelihood or duration. This assignment develops practical ML skills, model evaluation competency, and critical thinking about predictive modeling in disaster contexts.</p>
+        <p>This assignment challenges students to construct a knowledge graph that models infrastructure interdependencies during disasters. Students will use real disaster event data to map relationships between infrastructure systems (power, water, transportation, communication) and identify cascading failure patterns. This assignment develops systems thinking, data modeling skills, and understanding of urban resilience complexity.</p>
 
         <h4>Learning Outcomes</h4>
         <p>Students will be able to:</p>
         <ul>
-          <li>Prepare and clean disaster infrastructure datasets for machine learning</li>
-          <li>Engineer meaningful features from spatial, temporal, and infrastructure attributes</li>
-          <li>Train and evaluate multiple regression/classification models using scikit-learn</li>
-          <li>Apply proper train-test splitting and cross-validation techniques</li>
-          <li>Interpret model performance and identify key predictors of disruption</li>
-          <li>Critically assess model limitations and ethical implications</li>
+          <li>Design an ontology for infrastructure systems and disaster impacts</li>
+          <li>Extract and structure relationships from disaster reports and datasets</li>
+          <li>Build and query a knowledge graph using Python (NetworkX or Neo4j)</li>
+          <li>Identify critical infrastructure nodes and cascading failure pathways</li>
+          <li>Communicate complex system interdependencies through visual and written analysis</li>
         </ul>
 
         <h4>Assignment Description</h4>
-        <p>Working individually, students will complete a 5-phase ML project:</p>
+        <p>Working individually or in pairs, students will complete a 4-phase project:</p>
 
         <div class="timeline">
           <div class="timeline-item">
-            <h4>Phase 1: Data Exploration & Preparation</h4>
-            <p>Load the provided disaster infrastructure dataset (e.g., power outages during hurricanes, road closures during floods). Conduct exploratory data analysis (EDA): identify missing values, examine distributions, visualize correlations, and document data quality issues.</p>
+            <h4>Phase 1: Data Collection & Analysis</h4>
+            <p>Review disaster event documentation (e.g., Hurricane Maria, Texas Winter Storm 2021). Extract entities (infrastructure facilities, services, communities) and relationships (depends_on, disrupts, serves, etc.) from reports, news articles, and datasets.</p>
           </div>
           <div class="timeline-item">
-            <h4>Phase 2: Feature Engineering</h4>
-            <p>Create predictive features from raw data. Examples include: hazard intensity metrics (wind speed, flood depth), infrastructure age, proximity to hazard zone, socioeconomic vulnerability indices, network centrality measures, temporal features (season, time since last event). Justify your feature choices.</p>
+            <h4>Phase 2: Ontology Design</h4>
+            <p>Define node types (e.g., PowerPlant, Hospital, WaterTreatment, Community) and relationship types. Create a schema diagram showing how entities connect. Document attributes for each entity type.</p>
           </div>
           <div class="timeline-item">
-            <h4>Phase 3: Train-Test Split & Model Training</h4>
-            <p>Split dataset into training (70-80%) and test (20-30%) sets using appropriate stratification. Train at least 3 different models (e.g., Linear Regression, Random Forest, Gradient Boosting for regression tasks; Logistic Regression, Random Forest, XGBoost for classification). Use cross-validation on training data for hyperparameter tuning.</p>
+            <h4>Phase 3: Knowledge Graph Construction</h4>
+            <p>Implement the knowledge graph using Python (NetworkX for simple graphs, or Neo4j/RDFLib for advanced students). Populate with at least 30 entities and 50 relationships from the disaster case.</p>
           </div>
           <div class="timeline-item">
-            <h4>Phase 4: Model Evaluation & Interpretation</h4>
-            <p>Evaluate models on the test set using appropriate metrics:</p>
+            <h4>Phase 4: Analysis & Visualization</h4>
+            <p>Query the graph to answer questions such as:</p>
             <ul>
-              <li><strong>Regression:</strong> RMSE, MAE, R²</li>
-              <li><strong>Classification:</strong> Accuracy, Precision, Recall, F1-score, ROC-AUC</li>
+              <li>Which infrastructure nodes are most critical (high centrality)?</li>
+              <li>What are the longest dependency chains?</li>
+              <li>Which communities are most vulnerable to cascading failures?</li>
+              <li>What would happen if a specific facility failed?</li>
             </ul>
-            <p>Compare model performance. Interpret feature importance and identify key predictors of disruption.</p>
-          </div>
-          <div class="timeline-item">
-            <h4>Phase 5: Critical Analysis & Reporting</h4>
-            <p>Write a 3-4 page report addressing:</p>
-            <ul>
-              <li>Model performance and comparison</li>
-              <li>Key predictors and their practical significance</li>
-              <li>Limitations (data bias, missing features, generalizability)</li>
-              <li>Ethical considerations (fairness, equity implications)</li>
-              <li>Recommendations for model deployment</li>
-            </ul>
+            <p>Create visualizations and write a 3-4 page analysis report.</p>
           </div>
         </div>
 
@@ -523,19 +511,18 @@
           <div class="card">
             <h4><i class="fa fa-code" aria-hidden="true"></i> Technical Deliverables</h4>
             <ul>
-              <li>Jupyter Notebook (.ipynb) with all code, outputs, and markdown explanations</li>
-              <li>Trained model files (pickled .pkl or .joblib)</li>
-              <li>Feature importance visualizations</li>
-              <li>Model performance plots (ROC curves, confusion matrices, residual plots)</li>
+              <li>Python code/Jupyter notebook (.ipynb)</li>
+              <li>Knowledge graph file (GraphML or JSON)</li>
+              <li>Ontology schema diagram (PNG/PDF)</li>
+              <li>Network visualizations</li>
             </ul>
           </div>
           <div class="card">
-            <h4><i class="fa fa-file-text-o" aria-hidden="true"></i> Written Analysis</h4>
+            <h4><i class="fa fa-file-text-o" aria-hidden="true"></i> Written Components</h4>
             <ul>
-              <li>Technical report (3-4 pages, PDF)</li>
-              <li>Discussion of methodology and results</li>
-              <li>Critical reflection on limitations and ethics</li>
-              <li>Recommendations for practitioners</li>
+              <li>Analysis report (3-4 pages, PDF)</li>
+              <li>Documentation of ontology design decisions</li>
+              <li>Reflection on limitations and extensions</li>
             </ul>
           </div>
         </div>
@@ -543,12 +530,12 @@
         <div class="highlight-box">
           <h4>Why This Assignment Is Innovative</h4>
           <ul>
-            <li>Uses real disaster datasets with realistic noise and complexity</li>
-            <li>Emphasizes proper ML workflow: EDA → feature engineering → train/test split → evaluation</li>
-            <li>Requires critical thinking about model limitations and ethical implications</li>
-            <li>Connects technical ML skills with disaster management decision-making</li>
-            <li>Prepares students for data science roles in resilience and infrastructure sectors</li>
-            <li>Balances technical rigor with interpretability and practical applicability</li>
+            <li>Applies emerging AI/knowledge representation concepts to civil infrastructure</li>
+            <li>Bridges qualitative disaster reports with quantitative network modeling</li>
+            <li>Develops systems thinking through hands-on ontology design</li>
+            <li>Provides flexibility: simple graph (NetworkX) or advanced semantic web (Neo4j/RDF)</li>
+            <li>Connects technical modeling with real-world disaster scenarios</li>
+            <li>Prepares students for research using knowledge graphs and LLMs</li>
           </ul>
         </div>
 
@@ -566,60 +553,49 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Data Preparation</strong></td>
-                <td>Thorough EDA, appropriate handling of missing data, clear documentation</td>
-                <td>Adequate EDA and data cleaning</td>
-                <td>Basic EDA, some issues unaddressed</td>
-                <td>Insufficient or missing</td>
+                <td><strong>Ontology Design</strong></td>
+                <td>Comprehensive, well-justified schema with clear relationships</td>
+                <td>Adequate schema with most key relationships</td>
+                <td>Basic schema, some gaps</td>
+                <td>Incomplete or unclear</td>
               </tr>
               <tr>
-                <td><strong>Feature Engineering</strong></td>
-                <td>Creative, well-justified features; demonstrates domain knowledge</td>
-                <td>Adequate features with some justification</td>
-                <td>Basic features, limited justification</td>
-                <td>Poor or no feature engineering</td>
+                <td><strong>Graph Construction</strong></td>
+                <td>Accurate, rich with ≥30 entities, ≥50 relationships</td>
+                <td>Mostly accurate, meets minimums</td>
+                <td>Some errors, below minimums</td>
+                <td>Major errors or incomplete</td>
               </tr>
               <tr>
-                <td><strong>Model Training</strong></td>
-                <td>Proper train-test split, ≥3 models, appropriate hyperparameter tuning</td>
-                <td>Correct split, ≥3 models, basic tuning</td>
-                <td>Correct split, 2 models, minimal tuning</td>
-                <td>Improper methodology or incomplete</td>
+                <td><strong>Analysis Quality</strong></td>
+                <td>Deep insights, multiple query types, strong reasoning</td>
+                <td>Adequate analysis with some insights</td>
+                <td>Surface-level analysis</td>
+                <td>Little/no analysis</td>
               </tr>
               <tr>
-                <td><strong>Model Evaluation</strong></td>
-                <td>Comprehensive metrics, clear visualizations, insightful interpretation</td>
-                <td>Appropriate metrics and visualizations</td>
-                <td>Basic metrics, limited interpretation</td>
-                <td>Missing or incorrect evaluation</td>
+                <td><strong>Visualization</strong></td>
+                <td>Clear, informative, professional network diagrams</td>
+                <td>Mostly clear diagrams</td>
+                <td>Some clarity issues</td>
+                <td>Unclear or missing</td>
               </tr>
               <tr>
-                <td><strong>Critical Analysis</strong></td>
-                <td>Deep reflection on limitations, ethics, fairness; actionable recommendations</td>
-                <td>Adequate discussion of limitations</td>
-                <td>Surface-level reflection</td>
-                <td>Little/no critical analysis</td>
+                <td><strong>Systems Thinking</strong></td>
+                <td>Demonstrates sophisticated understanding of interdependencies</td>
+                <td>Shows basic systems awareness</td>
+                <td>Limited systems perspective</td>
+                <td>No systems thinking evident</td>
               </tr>
               <tr>
-                <td><strong>Technical Quality</strong></td>
-                <td>Code runs correctly, well-documented, reproducible, efficient</td>
+                <td><strong>Technical Implementation</strong></td>
+                <td>Code runs correctly, well-documented, efficient</td>
                 <td>Code runs with minor issues</td>
-                <td>Code runs but poorly documented</td>
-                <td>Code doesn't run or major errors</td>
+                <td>Significant technical problems</td>
+                <td>Code doesn't run or missing</td>
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <h4>Dataset Information</h4>
-        <div class="highlight-box">
-          <p><strong>Provided Dataset:</strong> Historical infrastructure disruption records from 3-5 major disaster events (hurricanes, floods, winter storms). Dataset includes:</p>
-          <ul>
-            <li><strong>Target Variable:</strong> Disruption duration (hours) OR binary disruption status</li>
-            <li><strong>Features:</strong> Hazard intensity, infrastructure type/age, location (lat/lon), population served, vulnerability indices, network metrics, temporal features</li>
-            <li><strong>Size:</strong> ~5,000-10,000 records</li>
-          </ul>
-          <p>Students are encouraged to create additional features through spatial joins or external data integration.</p>
         </div>
 
         <h4>Scaffolding & Support</h4>
@@ -627,19 +603,19 @@
           <div class="card">
             <h4>Provided Resources</h4>
             <ul>
-              <li>Starter notebook with data loading and basic EDA</li>
-              <li>Example feature engineering functions</li>
-              <li>Tutorial on scikit-learn pipelines</li>
-              <li>Model evaluation template</li>
+              <li>Starter notebook with example ontology</li>
+              <li>Sample disaster datasets and reports</li>
+              <li>Tutorial on NetworkX basics</li>
+              <li>Ontology design templates</li>
             </ul>
           </div>
           <div class="card">
             <h4>Optional Extensions</h4>
             <ul>
-              <li>Implement explainable AI (SHAP values)</li>
-              <li>Add spatial cross-validation for spatial data</li>
-              <li>Compare with deep learning models (neural networks)</li>
-              <li>Conduct sensitivity analysis on model inputs</li>
+              <li>Use Neo4j for graph database implementation</li>
+              <li>Add temporal dimension (time-varying relationships)</li>
+              <li>Integrate with LLM for automated entity extraction</li>
+              <li>Create interactive web-based visualization</li>
             </ul>
           </div>
         </div>
